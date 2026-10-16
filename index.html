@@ -1,0 +1,631 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bahamas — Key Statistics</title><style>
+:root{
+  --ink:#0b1b4c;
+  --muted:#60708e;
+  --line:#dce7f2;
+  --card:#ffffff;
+  --social:#eaf4ff;
+  --economic:#e9f5ff;
+  --env:#e8f8f5;
+  --blue:#0d6fe8;
+  --blue2:#67b8f5;
+  --green:#18a48f;
+  --green2:#7dd8c8;
+}
+
+*{box-sizing:border-box;min-width:0}
+
+html,body{
+  margin:0;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:#ffffff;
+}
+
+.wrap{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:16px 14px 28px;
+  overflow-x:hidden;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+  display:block;
+  margin-bottom:16px;
+}
+
+.hero h1{
+  font-size:42px;
+  line-height:1.05;
+  margin:6px 0 10px;
+  color:#111f5a;
+}
+
+.hero p{
+  font-size:16px;
+  line-height:1.4;
+  margin:0;
+  color:#334a77;
+  max-width:100%;
+}
+
+
+/* ---------- PILLARS ---------- */
+
+.pillar{
+  border-radius:16px;
+  padding:12px;
+  margin:16px 0;
+}
+
+.social{background:var(--social)}
+.economic{background:var(--economic)}
+.environment{background:var(--env)}
+
+.pillar-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:2px 4px 10px;
+}
+
+.badge{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:24px;
+  font-weight:bold;
+  background:linear-gradient(135deg,#0878ef,#0a4da4);
+  flex:0 0 auto;
+}
+
+.environment .badge{
+  background:linear-gradient(135deg,#16a995,#087565);
+}
+
+.pillar-head h2{
+  font-size:26px;
+  margin:0;
+  white-space:nowrap;
+}
+
+.tag{
+  font-size:13px;
+  color:#335987;
+}
+
+.strap{
+  margin-left:auto;
+  font-size:13px;
+  color:#315a88;
+  text-align:right;
+  max-width:40%;
+}
+
+/* ---------- FLEXIBLE CARD GRID ---------- */
+/* No forced 5-card layout. Cards expand naturally based on available width. */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(205px,1fr));
+  gap:9px;
+  width:100%;
+}
+
+.card{
+  background:#fff;
+  border:1px solid rgba(14,76,145,.08);
+  border-radius:11px;
+  min-height:124px;
+  padding:12px;
+  overflow:hidden;
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  box-shadow:0 1px 0 rgba(10,36,95,.03);
+}
+
+.icon{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e8f3ff;
+  font-size:21px;
+  flex:0 0 auto;
+}
+
+.environment .icon{
+  background:#dff3ee;
+}
+
+.card > div:last-child{
+  flex:1 1 auto;
+}
+
+.label{
+  font-size:12.5px;
+  font-weight:700;
+  line-height:1.22;
+  margin-bottom:5px;
+  overflow-wrap:anywhere;
+}
+
+.value{
+  font-size:24px;
+  font-weight:800;
+  line-height:1.05;
+  color:#0c1b57;
+  overflow-wrap:anywhere;
+}
+
+.period{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:6px;
+  line-height:1.25;
+}
+
+.meaning{
+  font-size:11.5px;
+  color:#284e7a;
+  margin-top:6px;
+  line-height:1.3;
+  font-weight:600;
+}
+
+.card-source{
+  font-size:10.5px;
+  margin-top:7px;
+  line-height:1.25;
+}
+
+.card-source a{
+  color:#3d6592;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+
+.card-source a:hover{
+  color:#0d6fe8;
+}
+
+/* ---------- STORY VISUALS ---------- */
+
+.visual-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:10px;
+  margin-top:10px;
+  width:100%;
+}
+
+.chart-card,
+.story-card{
+  background:#fff;
+  border:1px solid rgba(14,76,145,.08);
+  border-radius:11px;
+  padding:14px;
+  overflow:hidden;
+}
+
+.chart-card h3,
+.story-card h3{
+  margin:0 0 4px;
+  font-size:19px;
+}
+
+.chart-sub{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:12px;
+  line-height:1.35;
+}
+
+.chart-source{
+  margin-top:10px;
+  font-size:11px;
+}
+
+.chart-source a{
+  color:#3d6592;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+
+
+.visual-stat-card{
+  height:100%;
+  min-height:100%;
+  align-self:stretch;
+  padding:20px;
+}
+
+.visual-stat-card .value{
+  font-size:34px;
+  margin-top:4px;
+}
+
+.visual-stat-card .meaning{
+  margin-top:10px;
+  max-width:420px;
+}
+
+
+/* ---------- DONUT ---------- */
+
+.donut-wrap{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:22px;
+  align-items:center;
+  min-height:220px;
+}
+
+.donut{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  position:relative;
+  margin:auto;
+  box-shadow:inset 0 0 0 1px rgba(11,27,76,.06);
+}
+
+.donut::after{
+  content:"";
+  position:absolute;
+  inset:32px;
+  background:#fff;
+  border-radius:50%;
+}
+
+.donut-center{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+  text-align:center;
+  font-size:12px;
+  font-weight:700;
+  color:#233d70;
+  pointer-events:none;
+  padding:52px;
+}
+
+.legend{
+  display:grid;
+  gap:10px;
+}
+
+.legend-row{
+  display:grid;
+  grid-template-columns:14px 1fr auto;
+  gap:8px;
+  align-items:center;
+  font-size:13px;
+}
+
+.swatch{
+  width:12px;
+  height:12px;
+  border-radius:3px;
+}
+
+.legend-label{
+  color:#425a7c;
+}
+
+.legend-value{
+  font-weight:800;
+  color:#0c1b57;
+}
+
+/* ---------- SOCIAL SNAPSHOT ---------- */
+
+.note{
+  background:rgba(255,255,255,.74);
+  border-radius:11px;
+  padding:16px;
+  font-size:14px;
+  line-height:1.45;
+  color:#365270;
+}
+
+.snapshot-lines{
+  display:grid;
+  gap:12px;
+  margin-top:12px;
+}
+
+.snapshot-line{
+  padding-bottom:10px;
+  border-bottom:1px solid #e8eef5;
+}
+
+.snapshot-line:last-child{
+  border-bottom:0;
+  padding-bottom:0;
+}
+
+.snapshot-line strong{
+  color:#132c63;
+}
+
+/* ---------- ENVIRONMENT HERO COMPARISON ---------- */
+
+.ocean-comparison{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:10px;
+}
+
+.compare-card{
+  background:#fff;
+  border:1px solid rgba(14,76,145,.08);
+  border-radius:11px;
+  padding:18px;
+  text-align:center;
+}
+
+.compare-card .compare-label{
+  font-size:12px;
+  font-weight:700;
+  color:#3f6283;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+}
+
+.compare-card .compare-value{
+  font-size:34px;
+  line-height:1;
+  font-weight:800;
+  color:#0c1b57;
+  margin:8px 0 5px;
+}
+
+.compare-card .compare-note{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.compare-story{
+  grid-column:1 / -1;
+  background:rgba(255,255,255,.74);
+  border-radius:11px;
+  padding:14px 16px;
+  color:#365270;
+  font-size:14px;
+  line-height:1.45;
+}
+
+
+/* ---------- LINE CHARTS ---------- */
+
+.line-chart{
+  position:relative;
+  height:250px;
+  margin-top:8px;
+  padding:12px 8px 34px 42px;
+  border-left:1px solid #dbe5ef;
+  border-bottom:1px solid #dbe5ef;
+}
+
+.line-chart svg{
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+
+.line-chart .grid{
+  stroke:#e8eef5;
+  stroke-width:1;
+}
+
+.line-chart .zero{
+  stroke:#aebed0;
+  stroke-width:1.3;
+}
+
+.line-chart .path{
+  fill:none;
+  stroke:#0d6fe8;
+  stroke-width:3;
+  stroke-linejoin:round;
+  stroke-linecap:round;
+}
+
+.line-chart .dot{
+  fill:#ffffff;
+  stroke:#0d6fe8;
+  stroke-width:2;
+}
+
+.line-axis-label{
+  font-size:10px;
+  fill:#667892;
+}
+
+.line-y-label{
+  position:absolute;
+  left:0;
+  font-size:10px;
+  color:#667892;
+}
+
+.line-x-labels{
+  display:grid;
+  gap:0;
+  margin:6px 0 0 42px;
+  color:#667892;
+  font-size:9px;
+}
+
+.line-x-labels span{
+  text-align:center;
+  white-space:nowrap;
+  transform:rotate(-35deg);
+  transform-origin:top center;
+}
+
+@media(max-width:760px){
+  .line-chart{
+    height:220px;
+  }
+  .line-x-labels{
+    font-size:8px;
+  }
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.sources{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:flex-start;
+  padding:16px 4px 0;
+  font-size:13px;
+  color:#4e6380;
+  line-height:1.45;
+}
+
+.error{
+  padding:20px;
+  border:1px solid #e0a5a5;
+  background:#fff6f6;
+  border-radius:10px;
+  color:#7b1e1e;
+}
+
+/* ---------- EMBED SAFETY ---------- */
+
+html, body, #app, .wrap, .hero, .pillar, .pillar-head,
+.cards, .card, .visual-grid, .chart-card, .story-card,
+.sources, .ocean-comparison {
+  max-width:100% !important;
+  min-width:0 !important;
+}
+
+img,svg,canvas{
+  max-width:100% !important;
+}
+
+.sources,.tag,.strap,.label,.period{
+  overflow-wrap:anywhere;
+}
+
+body{
+  overflow-x:hidden !important;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:1000px){
+  .cards{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .visual-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:760px){
+  .pillar-head{
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .strap{
+    margin-left:64px;
+    text-align:left;
+    width:100%;
+    max-width:none;
+  }
+  .donut-wrap{
+    grid-template-columns:1fr;
+  }
+  .ocean-comparison{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:560px){
+  .wrap{
+    padding:14px 10px;
+  }
+  .hero h1{
+    font-size:34px;
+  }
+  .cards{
+    grid-template-columns:1fr;
+  }
+  .value{
+    font-size:27px;
+  }
+  .pillar-head h2{
+    font-size:23px;
+  }
+}
+
+
+    .hero{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+    .hero h1{font-size:36px;margin:4px 0}.hero .updated{white-space:nowrap;font-size:12px;color:#60708e;text-align:right}
+    .hero p{font-size:13px;margin-top:6px}.economic{background:#f1f3fb}.economic .badge{background:#192f69}
+    .badge svg,.icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .badge{width:44px;height:44px}.pillar-head h2{font-size:23px}.strap{font-size:12px;max-width:45%}
+    .card{min-height:148px;gap:9px}.icon{width:34px;height:34px}.value{font-size:25px}.meaning{font-weight:400}
+    .chart-card h3{font-size:18px}.legend-value{font-size:12px}.chart-note{font-size:12px;color:#60708e;margin-top:8px;line-height:1.4}
+    .bar-row{display:grid;grid-template-columns:95px 1fr 90px;gap:10px;align-items:center;margin:22px 0;font-size:13px}
+    .bar-track{height:26px;background:#eef2f8;border-radius:5px;overflow:hidden}.bar-fill{height:100%;border-radius:5px;background:#1b4a86}
+    .bar-row strong{text-align:right}.line-label{font-size:12px;fill:#536985}.line-grid{stroke:#e4ebf4;stroke-width:1}
+    .trend{display:block;width:100%;height:190px}.single-chart{margin-top:10px}.chart-source{font-size:11px;line-height:1.4}
+    .sources{font-size:11px;padding-bottom:6px}.chart-source a,.sources a{color:#3d6592}
+    @media(max-width:700px){.hero{display:block}.hero .updated{text-align:left;margin-top:8px}.hero h1{font-size:29px}.strap{max-width:100%;margin-left:54px}.bar-row{grid-template-columns:70px 1fr 74px;font-size:12px}.trend{height:160px}}
+    
+/* Comparisons remain readable in narrower Hub embeds. */
+.visual-grid>.card{height:100%;align-items:flex-start}
+.bar-row{grid-template-columns:minmax(100px,1fr) minmax(60px,2fr) 62px;margin:16px 0}
+.environment .value{font-size:25px}
+.hero p a{color:#3d6592}
+@media(max-width:560px){.bar-row{grid-template-columns:minmax(90px,1fr) minmax(60px,1.4fr) 52px;gap:8px}.hero .updated{text-align:right}}
+
+.hero .updated{align-self:flex-end;text-align:right;margin-left:auto}
+.dashboard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.dashboard-grid>.card,.dashboard-grid>.chart-card{height:100%}
+.dashboard-grid .wide{grid-column:1/-1}
+.bar-row{grid-template-columns:minmax(110px,1fr) minmax(50px,2fr) 95px}
+.chart-source{margin-top:10px;overflow-wrap:anywhere}
+.period,.meaning,.chart-note{overflow-wrap:anywhere}
+.social .bar-fill{background:#0d6fe8}.economic .bar-fill{background:#192f69}
+.environment .badge{background:#137f70}
+.environment .icon{color:#137f70}.economic .icon{color:#192f69}.social .icon{color:#0d6fe8}
+@media(max-width:700px){.dashboard-grid{grid-template-columns:1fr}.dashboard-grid .wide{grid-column:auto}.hero .updated{text-align:right}.bar-row{grid-template-columns:minmax(100px,1fr) minmax(40px,1.2fr) 78px}}
+</style></head><body><main class="wrap" id="app"></main><noscript>Please enable JavaScript to display this dashboard. Data and source references are available in data.json.</noscript><script id="dashboard-data" type="application/json">{"schema": 1, "build": "bahamas-statistics-v1-20261016", "title": "Bahamas — Key Statistics", "updated": "16 October 2026", "population": {"id": "population", "label": "Census population", "value": 398165, "unit": "people", "display": "398,165", "period": "2022 census", "source": "BNSI — 2022 Census, First Release", "source_url": "https://bnsistats.gov.bs/assets/publications/2022-census-report-1st-release.pdf", "note": "Context figure; not a current population estimate.", "source_location": "Printed p. 1", "icon": "people", "status": "Reported", "checked": "2026-10-16"}, "social": [{"id": "concentration", "label": "Population on New Providence", "value": 74.5, "unit": "percent", "display": "74.5%", "period": "2022 census", "source": "BNSI — 2022 Census, First Release", "source_url": "https://bnsistats.gov.bs/assets/publications/2022-census-report-1st-release.pdf", "note": "Nearly three in four residents live on one island. New Providence: 296,732 people out of 398,165 nationally.", "source_location": "Printed pp. 6–7", "icon": "people", "status": "Reported", "checked": "2026-10-16"}, {"id": "internet", "label": "Internet access and the age gap", "value": 92.3, "unit": "percent", "display": "92.3% nationally", "period": "2022 census · population aged 3+", "source": "BNSI — 2022 Census, Second Release", "source_url": "https://bnsistats.gov.bs/assets/publications/2022-census-2nd-releasehousehold-and-dwelling-characteristics-20251020132803-(1).pdf", "note": "Access among people aged 65+ was 80.4%. The national figure was 64.7% in 2010. These are people with access, not households or broadband subscriptions.", "source_location": "Printed pp. 15–16; Table 27, pp. 47–48", "icon": "wifi", "status": "Reported", "checked": "2026-10-16"}, {"id": "obesity", "label": "Adult obesity", "value": 43.6, "unit": "percent", "display": "43.6%", "period": "2019 STEPS survey · adults aged 18–69", "source": "Ministry of Health & Wellness — Bahamas STEPS 2019", "source_url": "https://cdn.bahamas.gov.bs/tenant/tenantministryofhealth/documents/All%20Documents/BHS-Fact-Sheetv3.2-2022-FINAL-VERSION-2022-4-20250205112509.pdf", "note": "Measured BMI of at least 30 kg/m². National survey estimate; 95% confidence interval 39.9–47.4%. The survey year is 2019.", "source_location": "Fact sheet, p. 2", "icon": "heart", "status": "Reported", "checked": "2026-10-16", "confidence_low": 39.9, "confidence_high": 47.4}], "economic": [{"id": "tourism", "label": "Tourism demand concentrated in the US", "value": 83.4, "unit": "percent", "display": "83.4%", "period": "2025 · stopover visitors by country of residence", "source": "Ministry of Tourism — Research & Statistics", "source_url": "https://www.tourismtoday.com/sites/default/files/docs/Stopover%20Visitors%20by%20Country%201977%20to%202025.pdf", "note": "US residents made up 1,532,422 of 1,838,168 stopover visitors. This measures market concentration, not tourism’s contribution to GDP. Figures are subject to revision.", "source_location": "2025 row", "icon": "plane", "status": "Subject to revision", "checked": "2026-10-16"}, {"id": "trade", "label": "Goods imports versus exports", "value": 7.536668807890328, "unit": "ratio", "display": "7.5×", "period": "2025 · merchandise trade", "source": "BNSI — Foreign Trade Statistics Annual Report 2025", "source_url": "https://bnsistats.gov.bs/assets/publications/2025-trade-publication-report-bnsi-20260528101746.pdf", "note": "Imports divided by exports, including re-exports. Services such as tourism are outside this comparison. Imports are c.i.f.; exports f.o.b.", "source_location": "Table 2.1, printed p. 32; highlights p. viii", "icon": "arrows", "status": "Reported", "checked": "2026-10-16", "calculation": "5107222864 / 677649900"}, {"id": "food", "label": "Food and live-animal imports", "value": 855571250, "unit": "BSD", "display": "B$855.6m", "period": "2025 · SITC food and live animals", "source": "BNSI — Foreign Trade Statistics Annual Report 2025", "source_url": "https://bnsistats.gov.bs/assets/publications/2025-trade-publication-report-bnsi-20260528101746.pdf", "note": "16.8% of merchandise imports. This is an import bill, not the share of food consumed that is imported; it does not separate resident and visitor demand.", "source_location": "Table 2.2, printed p. 33", "icon": "food", "status": "Reported", "checked": "2026-10-16"}, {"id": "fuel", "label": "Fuel and related imports", "value": 545116876, "unit": "BSD", "display": "B$545.1m", "period": "2025 · mineral fuels, lubricants and related materials", "source": "BNSI — Foreign Trade Statistics Annual Report 2025", "source_url": "https://bnsistats.gov.bs/assets/publications/2025-trade-publication-report-bnsi-20260528101746.pdf", "note": "10.7% of merchandise imports. Covers fuel and related products for multiple uses; it is not an electricity-generation share or an emissions measure.", "source_location": "Table 2.2, printed p. 33", "icon": "fuel", "status": "Reported", "checked": "2026-10-16"}, {"id": "debt", "label": "Central government debt relative to GDP", "value": 70.7, "unit": "percent", "display": "70.7%", "period": "End-June 2026 · estimate", "source": "Ministry of Finance — Debt Management Office", "source_url": "https://mof-investor-relations.gov.bs/the-bahamas-ministry-of-financevi/about/news/i6934?newsId=65139", "note": "Central government debt was estimated at B$12.4661bn. The ratio excludes the additional debt of agencies and government business enterprises.", "source_location": "20 August 2026 release; June 2026 bulletin summary", "icon": "bank", "status": "Estimate", "checked": "2026-10-16"}], "environment": [{"id": "dorian", "label": "Hurricane Dorian: total cost", "value": 3400000000, "unit": "USD", "display": "US$3.4bn", "period": "2019 event · DRM Authority reporting, September 2026", "source": "Bahamas Disaster Risk Management Authority", "source_url": "https://drm.gov.bs/articles/4338/", "note": "Estimated total: US$2.5bn in direct damage plus US$0.9bn in indirect losses and emergency-response costs. A historical disaster impact, not an annual cost.", "source_location": "Seven years after Dorian, total-cost paragraph", "icon": "storm", "status": "Estimate", "checked": "2026-10-16"}, {"id": "marine", "label": "Marine protected areas", "value": 6800000, "unit": "hectares", "display": "6.8m hectares", "period": "Government reporting · October 2025", "source": "Office of the Prime Minister — parliamentary statement", "source_url": "https://opm.gov.bs/prime-minister-davis-bahamas-protected-area-fund-amendment-bill-2025-debate/", "note": "Area reported as established marine protected areas. Designation alone does not demonstrate effective management or healthy ecosystem condition.", "source_location": "8 October 2025 statement on Protected Area Fund Amendment Bill", "icon": "ocean", "status": "Reported", "checked": "2026-10-16"}], "internet_comparison": [{"label": "National, aged 3+", "value": 92.3}, {"label": "People aged 65+", "value": 80.4}], "trade": {"imports": 5107222864, "exports": 677649900, "deficit": 4429572964, "unit": "BSD", "period": "2025"}, "exclusions": ["Low-elevation land share: the 2025 NDC uses conflicting elevation thresholds; not used.", "Generic tourism GDP shares: not substituted for a verified, defined national tourism-account result.", "Electricity projections and capacity targets: not presented as observed generation shares."]}</script><script>
+const d=JSON.parse(document.getElementById('dashboard-data').textContent);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const paths={people:'<circle cx="9" cy="7" r="3"/><circle cx="18" cy="8" r="2"/><path d="M3 21v-3a6 6 0 0 1 12 0v3m3-8a5 5 0 0 1 4 5v3"/>',chart:'<path d="M3 3v18h18M7 16v-5m5 5V6m5 10v-8"/>',leaf:'<path d="M20 3C8 2 2 9 5 16s14 4 15-13ZM4 21 16 8"/>',heart:'<path d="M12 21 3 12a5 5 0 0 1 9-7 5 5 0 0 1 9 7Z"/>',arrows:'<path d="M3 7h18l-4-4m4 4-4 4M21 17H3l4-4m-4 4 4 4"/>',storm:'<path d="M4 13a5 5 0 0 1 2-9m2 16a5 5 0 0 1-4-3m9-13a7 7 0 0 1 7 5m-2 10a7 7 0 0 1-9 2"/><circle cx="12" cy="12" r="4"/>',wifi:'<path d="M2 8a16 16 0 0 1 20 0M5 12a11 11 0 0 1 14 0M8 16a6 6 0 0 1 8 0"/><circle cx="12" cy="20" r="1"/>',plane:'<path d="m22 2-7 20-4-9-9-4 20-7ZM11 13 22 2"/>',food:'<path d="M4 2v7m3-7v7m3-7v7M4 6h6M7 9v13M18 2c-4 4-4 10 0 10h2V2Zm2 10v10"/>',fuel:'<path d="M4 22V3h10v19M4 9h10M2 22h14m-2-16 5 4v8a2 2 0 0 0 4 0v-7l-3-3"/>',bank:'<path d="m2 8 10-6 10 6H2Zm2 3v7m5-7v7m6-7v7m5-7v7M2 22h20M3 18h18"/>',ocean:'<path d="M2 17q3-4 6 0t6 0 8 0M2 22q3-4 6 0t6 0 8 0M12 15V3m0 6-5-4m5 7 5-5M7 5V2m10 5V3"/>'};
+const icon=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${paths[k]||paths.chart}</svg>`;
+const ref=r=>`<div class="chart-source">Source: <a href="${esc(r.source_url)}" target="_blank" rel="noopener noreferrer">${esc(r.source)}</a></div>`;
+function card(r){return `<article class="card" data-indicator="${esc(r.id)}"><div class="icon">${icon(r.icon)}</div><div><div class="label">${esc(r.label)}</div><div class="value">${esc(r.display)}</div><div class="period">${esc(r.period)}</div><div class="meaning">${esc(r.note)}</div>${ref(r)}</div></article>`;}
+function pillar(cls,title,tag,strap,content){return `<section class="pillar ${cls}" aria-label="${title}"><div class="pillar-head"><div class="badge">${icon(cls==='social'?'people':cls==='economic'?'chart':'leaf')}</div><h2>${title}</h2><div class="tag">${tag}</div><div class="strap">${strap}</div></div><div class="dashboard-grid">${content}</div></section>`;}
+function internet(){let r=d.social[1];return `<article class="chart-card" data-indicator="internet"><h3>${esc(r.label)}</h3><div class="value">${esc(r.display)}</div><div class="chart-sub">${esc(r.period)}</div>${d.internet_comparison.map(x=>`<div class="bar-row"><span>${esc(x.label)}</span><div class="bar-track"><div class="bar-fill" style="width:${x.value}%"></div></div><strong>${x.value.toFixed(1)}%</strong></div>`).join('')}<div class="chart-note">${esc(r.note)}</div>${ref(r)}</article>`;}
+function trade(){let r=d.economic[1],t=d.trade;return `<article class="chart-card wide" data-indicator="trade"><h3>${esc(r.label)}</h3><div class="value">${esc(r.display)}</div><div class="chart-sub">2025 · B$ million</div>${[['Imports',t.imports],['Exports',t.exports]].map(([label,value])=>`<div class="bar-row"><span>${label}</span><div class="bar-track"><div class="bar-fill" style="width:${value/t.imports*100}%"></div></div><strong>${(value/1e6).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1})}</strong></div>`).join('')}<div class="chart-note">Goods trade deficit: B$${(t.deficit/1e9).toFixed(2)}bn. ${esc(r.note)}</div>${ref(r)}</article>`;}
+document.getElementById('app').innerHTML=`<header class="hero"><div><h1>${esc(d.title)}</h1><p>People, overseas dependencies and island resilience</p><p>Population: ${esc(d.population.display)} · ${esc(d.population.period)} · <a href="${esc(d.population.source_url)}" target="_blank" rel="noopener noreferrer">BNSI census</a></p></div><div class="updated">Updated ${esc(d.updated)}</div></header>${pillar('social','SOCIAL','People and access','Concentrated settlement, digital inclusion and health',`${card(d.social[0])}${internet()}<div class="wide">${card(d.social[2])}</div>`)}${pillar('economic','ECONOMIC','Markets and dependence','Tourism demand, imported essentials and public finances',`${card(d.economic[0])}${card(d.economic[4])}${trade()}${card(d.economic[2])}${card(d.economic[3])}`)}${pillar('environment','ENVIRONMENTAL','Conservation and resilience','Marine protection alongside major disaster costs',`${card(d.environment[0])}${card(d.environment[1])}`)}<footer class="sources">Reference periods differ. Estimates and survey years are labelled. Calculated comparisons use linked Bahamian official data. Marine designation is not an ecosystem-condition measure. Currency: B$ = Bahamian dollars; US$ = United States dollars.</footer>`;
+</script></body></html>
